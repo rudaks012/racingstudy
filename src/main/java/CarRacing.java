@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -6,12 +7,14 @@ public class CarRacing {
 
     public static void main(String[] args) {
         Input input = new Input();
-        int inputCarCount = Integer.parseInt(input.inputCarCount());
+        String[] carNames = input.inputCarCount().split(",");
+
+        int inputCarCount = carNames.length;
         int inputMoveCount = Integer.parseInt(input.inputMoveCount());
 
         List<Car> cars = new ArrayList<>();
-        for (int j = 0; j < inputCarCount; j++) {
-            cars.add(new Car());
+        for (String carName : carNames) {
+            cars.add(new Car(carName));
         }
 
         Output output = new Output();
@@ -23,9 +26,30 @@ public class CarRacing {
                 if (canMove) {
                     k3.moveForward();
                 }
-                output.printPosition(k3);
+
+                output.printCars(k3);
             }
             System.out.println();
         }
+        List<Car> winners = findWinners(cars);
+        output.printWinners(winners);
+    }
+
+
+    private static List<Car> findWinners(List<Car> cars) {
+        int maxPosition = 0;
+        List<Car> winners = new ArrayList<>();
+
+        for (Car car : cars) {
+            if (car.getPosition() > maxPosition) {
+                winners.clear();
+                winners.add(car);
+                maxPosition = car.getPosition();
+            } else if (car.getPosition() == maxPosition) {
+                winners.add(car);
+            }
+        }
+
+        return winners;
     }
 }
