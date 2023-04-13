@@ -15,9 +15,17 @@
 3. 자동차는 이동횟수를 입력할 수 있어야 한다. (Input#inputMoveCount) 
 4. 자동차의 위치 값 만큼 - 기호로 출력한다. (Output#printPosition)
 5. '실행 결과'메시지를 출력한다. (Output#printResultMessage)
+6. 주어진 수 만큼 자동차들을 생성 한다.(CarRacing#createCars(inputCount))
+7. 자동차는 조건에 따라 이동한다(CarRacing#move(k3, canMove))
 
 # 리팩터링
 1. 입력
 2. 출력
 3. 자동차
 4. 레이싱게임
+
+# 단위테스트
+1. Car#canMove(status)
+2. Car#moveForward
+3. CarRacing#createCars(inputCount)
+4. CarRacing#move(k3, canMove)
