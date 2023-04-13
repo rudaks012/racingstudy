@@ -29,3 +29,19 @@
 2. Car#moveForward
 3. CarRacing#createCars(inputCount)
 4. CarRacing#move(k3, canMove)
+
+# 우승자
+
+## 기능 요구사항
+- 각 자동차에 이름을 부여할 수 있다. 자동차 이름은 5자를 초과할 수 없다.
+- 전진하는 자동차를 출력할 때 자동차 이름을 같이 출력한다.
+- 자동차 이름은 쉼표(,)를 기준으로 구분한다.
+- 자동차 경주 게임을 완료한 후 누가 우승했는지를 알려준다. 우승자는 한명 이상일 수 있다.
+
+## 기능
+1. 자동차 이름을 부여한다.(Car(name))
+   1. 자동차의 이름은 5자를 초과할 수 없다.(Car#validateNameLength(name))
+2. 쉼표로 구분된 자동차 이름 목록을 받는다.(Input#inputCarNames)
+3. 자동차의 이름과 위치를 출력한다.(Output#printNameAndPosition(car))
+4. 우승자의 이름을 출력한다.(Output#printWinners(winners))
+5. 우승자들을 선별하다.(Winners#selectWinners(cars))
