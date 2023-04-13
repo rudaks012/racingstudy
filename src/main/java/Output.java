@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Output {
 
     public void printResultMessage() {
@@ -9,5 +11,19 @@ public class Output {
             System.out.print("-");
         }
         System.out.println();
+    }
+
+    public void printNameAndPosition(Car car) {
+        System.out.printf("%s : ", car.getName());
+        for (int i = 0; i < car.getPosition(); i++) {
+            System.out.print("-");
+        }
+        System.out.println();
+    }
+
+    public void printWinners(Winners winners) {
+        String winnerName = winners.getWinnerNames();
+
+        System.out.println(winnerName + "가 최종 우승했습니다.");
     }
 }

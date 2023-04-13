@@ -45,3 +45,4 @@
 3. 자동차의 이름과 위치를 출력한다.(Output#printNameAndPosition(car))
 4. 우승자의 이름을 출력한다.(Output#printWinners(winners))
 5. 우승자들을 선별하다.(Winners#selectWinners(cars))
+6. ,로 구분된 우승자들의 이름을 가져온다.(Winners#getWinnerNames)
