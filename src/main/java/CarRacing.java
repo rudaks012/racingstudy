@@ -6,10 +6,10 @@ public class CarRacing {
 
     public static void main(String[] args) {
         Input input = new Input();
-        int inputCarCount = Integer.parseInt(input.inputCarCount());
+        List<String> names = input.inputCarNames();
         int inputMoveCount = Integer.parseInt(input.inputMoveCount());
 
-        List<Car> cars = createCars(inputCarCount);
+        List<Car> cars = createCars(names);
 
         Output output = new Output();
         output.printResultMessage();
@@ -18,10 +18,12 @@ public class CarRacing {
             for (Car k3 : cars) {
                 boolean canMove = k3.canMove(new Random().nextInt(10));
                 move(k3, canMove);
-                output.printPosition(k3);
+                output.printNameAndPosition(k3);
             }
             System.out.println();
         }
+        Winners winners = new Winners(cars);
+        output.printWinners(winners);
     }
 
     public static void move(Car k3, boolean canMove) {
@@ -30,10 +32,10 @@ public class CarRacing {
         }
     }
 
-    public static List<Car> createCars(int inputCarCount) {
+    public static List<Car> createCars(List<String> names) {
         List<Car> cars = new ArrayList<>();
-        for (int j = 0; j < inputCarCount; j++) {
-            cars.add(new Car());
+        for (String name : names) {
+            cars.add(new Car(name));
         }
         return cars;
     }

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -20,14 +21,25 @@ class CarRacingTest {
         Assertions.assertThat(stopCar.getPosition()).isEqualTo(0);
     }
 
+//    @Test
+//    @DisplayName("주어진 수 만큼 자동차들을 생성 한다.")
+//    void createCars() {
+//        // given
+//        int carCount = 5;
+//        // when
+//        List<Car> cars = CarRacing.createCars(carCount);
+//        // then
+//        Assertions.assertThat(cars.size()).isEqualTo(carCount);
+//    }
+
     @Test
-    @DisplayName("주어진 수 만큼 자동차들을 생성 한다.")
+    @DisplayName("주어진 자동차의 이름 만큼 자동차를 생성 한다.")
     void createCars() {
         // given
-        int carCount = 5;
+        List<String> carNames = List.of("경만","정운","용주","poby","apple");
         // when
-        List<Car> cars = CarRacing.createCars(carCount);
+        List<Car> cars = CarRacing.createCars(carNames);
         // then
-        Assertions.assertThat(cars.size()).isEqualTo(carCount);
+        Assertions.assertThat(cars.size()).isEqualTo(5);
     }
 }

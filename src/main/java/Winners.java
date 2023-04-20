@@ -15,12 +15,16 @@ public class Winners {
         for (Car car : cars) {
             if (car.getPosition() > maxPosition) {
                 maxPosition = car.getPosition();
-                winners.clear();
+            }
+        }
+
+        for (Car car : cars) {
+            if (maxPosition == car.getPosition()) {
                 winners.add(car);
             }
         }
 
-        return cars.subList(0,2);
+        return winners;
     }
 
     public String getWinnerNames() {
