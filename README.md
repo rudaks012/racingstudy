@@ -8,13 +8,13 @@
 
 ---
 # 기능
-1. 자동차는 전진할 수 있다. (Car#moveForward)
-   - 주어진 값이 4이상이면 움직일 수 있다. (Car#canMove(status))
-   - 자동자의 위치값을 알려줄 수 있다.(Car#getPosition)
-2. 자동차의 개수를 입력 할 수 있다. (Input#inputCarCount) 
-3. 자동차는 이동횟수를 입력할 수 있어야 한다. (Input#inputMoveCount) 
-4. 자동차의 위치 값 만큼 - 기호로 출력한다. (Output#printPosition)
-5. '실행 결과'메시지를 출력한다. (Output#printResultMessage)
+1. 자동차는 전진할 수 있다. (domain.Car#moveForward)
+   - 주어진 값이 4이상이면 움직일 수 있다. (domain.Car#canMove(status))
+   - 자동자의 위치값을 알려줄 수 있다.(domain.Car#getPosition)
+2. 자동차의 개수를 입력 할 수 있다. (view.Input#inputCarCount) 
+3. 자동차는 이동횟수를 입력할 수 있어야 한다. (view.Input#inputMoveCount) 
+4. 자동차의 위치 값 만큼 - 기호로 출력한다. (view.Output#printPosition)
+5. '실행 결과'메시지를 출력한다. (view.Output#printResultMessage)
 6. 주어진 수 만큼 자동차들을 생성 한다.(CarRacing#createCars(inputCount))
 7. 자동차는 조건에 따라 이동한다(CarRacing#move(k3, canMove))
 
@@ -25,8 +25,8 @@
 4. 레이싱게임
 
 # 단위테스트
-1. Car#canMove(status)
-2. Car#moveForward
+1. domain.Car#canMove(status)
+2. domain.Car#moveForward
 3. CarRacing#createCars(inputCount)
 4. CarRacing#move(k3, canMove)
 
@@ -39,10 +39,10 @@
 - 자동차 경주 게임을 완료한 후 누가 우승했는지를 알려준다. 우승자는 한명 이상일 수 있다.
 
 ## 기능
-1. 자동차 이름을 부여한다.(Car(name))
-   1. 자동차의 이름은 5자를 초과할 수 없다.(Car#validateNameLength(name))
-2. 쉼표로 구분된 자동차 이름 목록을 받는다.(Input#inputCarNames)
-3. 자동차의 이름과 위치를 출력한다.(Output#printNameAndPosition(car))
-4. 우승자의 이름을 출력한다.(Output#printWinners(winners))
-5. 우승자들을 선별하다.(Winners#selectWinners(cars))
-6. ,로 구분된 우승자들의 이름을 가져온다.(Winners#getWinnerNames)
+1. 자동차 이름을 부여한다.(domain.Car(name))
+   1. 자동차의 이름은 5자를 초과할 수 없다.(domain.Car#validateNameLength(name))
+2. 쉼표로 구분된 자동차 이름 목록을 받는다.(view.Input#inputCarNames)
+3. 자동차의 이름과 위치를 출력한다.(view.Output#printNameAndPosition(car))
+4. 우승자의 이름을 출력한다.(view.Output#printWinners(winners))
+5. 우승자들을 선별하다.(domain.Winners#selectWinners(cars))
+6. ,로 구분된 우승자들의 이름을 가져온다.(domain.Winners#getWinnerNames)

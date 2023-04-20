@@ -1,5 +1,6 @@
-import java.util.ArrayList;
 import java.util.List;
+
+import domain.Car;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -27,7 +28,7 @@ class CarRacingTest {
 //        // given
 //        int carCount = 5;
 //        // when
-//        List<Car> cars = CarRacing.createCars(carCount);
+//        List<domain.Car> cars = CarRacing.createCars(carCount);
 //        // then
 //        Assertions.assertThat(cars.size()).isEqualTo(carCount);
 //    }
