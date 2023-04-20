@@ -9,26 +9,33 @@ import java.util.Random;
 
 public class CarRacing {
 
+    private static final Input input = new Input();
+    private static final Output output = new Output();
+
     public static void main(String[] args) {
-        Input input = new Input();
+
         List<String> names = input.inputCarNames();
         int inputMoveCount = Integer.parseInt(input.inputMoveCount());
 
         List<Car> cars = createCars(names);
 
-        Output output = new Output();
         output.printResultMessage();
 
         for (int i = 0; i < inputMoveCount; i++) {
-            for (Car k3 : cars) {
-                boolean canMove = k3.canMove(new Random().nextInt(10));
-                move(k3, canMove);
-                output.printNameAndPosition(k3);
-            }
+            moveCars(cars);
             System.out.println();
         }
+
         Winners winners = new Winners(cars);
         output.printWinners(winners);
+    }
+
+    private static void moveCars(List<Car> cars) {
+        for (Car k3 : cars) {
+            boolean canMove = k3.canMove(new Random().nextInt(10));
+            move(k3, canMove);
+            output.printNameAndPosition(k3);
+        }
     }
 
     public static void move(Car k3, boolean canMove) {
